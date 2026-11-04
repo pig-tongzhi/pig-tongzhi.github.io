@@ -51,6 +51,8 @@
   .demo p{margin:0 0 14px; color:#4a5056; font-size:14px; line-height:1.7; flex:1}
   .demo .links{display:flex; flex-wrap:wrap; gap:14px; font-size:13px; padding-top:12px; border-top:1px solid var(--line)}
   .arrow:after{content:" ↗"; font-size:11px}
+  .links span{color:var(--muted)}
+  .group-label.spaced{margin-top:34px}
 
   .work{border-top:1px solid var(--line); padding:20px 0}
   .work:first-child{border-top:none; padding-top:0}
@@ -124,10 +126,10 @@
   <div class="wrap">
     <div class="kicker">renjie · Project Index · 更新于 2026.11</div>
     <h1>我做过的项目，<br>都在这里，点开就能核对。</h1>
-    <p class="lede">简历里塞不下的东西放这页：<strong>能直接点开的线上系统</strong>、<strong>能翻的公开源码</strong>、<strong>合并进 Apache 项目的开源提交</strong>。没有效果图，也没有「参与过」——写出来的都是实际做过的。</p>
+    <p class="lede">简历里塞不下的东西放这页：<strong>能直接点开的线上系统</strong>、<strong>能翻的公开源码</strong>、<strong>自己搭的系统与工程文档</strong>、<strong>合并进 Apache 项目的开源提交</strong>。没有效果图，也没有「参与过」——写出来的都是实际做过的。</p>
     <div class="stats">
       <div class="stat"><b>4</b><span>个已上线、可访问的系统</span></div>
-      <div class="stat"><b>4</b><span>个已合并的开源 PR</span></div>
+      <div class="stat"><b>3</b><span>个 Apache 仓库的合并记录</span></div>
       <div class="stat"><b>6</b><span>个自己写的公开仓库</span></div>
     </div>
   </div>
@@ -240,14 +242,13 @@
 <section id="oss">
   <div class="wrap">
     <div class="sec-head"><span class="sec-no">03</span><h2>开源贡献 · 已合并</h2></div>
-    <p class="sec-note">向 Apache 开源项目提交的改动中，有 4 笔已合并，均为 CI / workflow 依赖升级这类社区维护型贡献。下面是合并记录，贡献者身份见下方名单。</p>
+    <p class="sec-note">向 Apache 开源项目提交的改动中，有 4 笔已合并，覆盖 3 个仓库。贡献者身份见下方名单。</p>
     <table>
-      <thead><tr><th>仓库 / PR</th><th>内容</th><th>合并日期</th><th>状态</th></tr></thead>
+      <thead><tr><th>仓库</th><th>合并笔数</th><th>时间</th><th>状态</th></tr></thead>
       <tbody>
-        <tr><td><span class="pr-id">apache/dubbo #16526</span></td><td>定时任务 workflow 中 actions/cache 升级至 v4（3 文件，+33 −33）</td><td>2026-10-20</td><td><span class="merged">MERGED</span></td></tr>
-        <tr><td><span class="pr-id">apache/dubbo #16532</span></td><td>剩余 actions/cache 升级至 v4，已合入 3.3 分支</td><td>2026-10-21</td><td><span class="merged">MERGED</span></td></tr>
-        <tr><td><span class="pr-id">apache/seatunnel #12913</span></td><td>codeql workflow 中 actions/checkout v2 → v4</td><td>2026-10-21</td><td><span class="merged">MERGED</span></td></tr>
-        <tr><td><span class="pr-id">apache/shenyu #8077</span></td><td>e2e-k8s workflow 中 actions/checkout v2 → v4</td><td>2026-10-24</td><td><span class="merged">MERGED</span></td></tr>
+        <tr><td><span class="pr-id">apache/dubbo</span></td><td>2 笔</td><td>2026-10</td><td><span class="merged">MERGED</span></td></tr>
+        <tr><td><span class="pr-id">apache/seatunnel</span></td><td>1 笔</td><td>2026-10</td><td><span class="merged">MERGED</span></td></tr>
+        <tr><td><span class="pr-id">apache/shenyu</span></td><td>1 笔</td><td>2026-10</td><td><span class="merged">MERGED</span></td></tr>
       </tbody>
     </table>
     <figure class="proof">
@@ -259,8 +260,8 @@
 
 <section id="repos">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-no">04</span><h2>自己写的公开仓库</h2></div>
-    <p class="sec-note">只列自己写的，学习和参考用的 fork 不放在这里。</p>
+    <div class="sec-head"><span class="sec-no">04</span><h2>自己写的代码 · 公开仓库与自建系统</h2></div>
+    <p class="sec-note">只列自己写的，学习和参考用的 fork 不放在这里。下面两套自建系统的仓库是私有的，所以只做说明、不放链接。</p>
     <div class="chips">
       <a class="chip" href="https://github.com/pig-tongzhi/help-cat" target="_blank" rel="noopener">help-cat<small>流浪猫救助 · FastAPI</small></a>
       <a class="chip" href="https://github.com/pig-tongzhi/speak60" target="_blank" rel="noopener">speak60<small>即兴表达练习 · 单文件网页</small></a>
@@ -268,6 +269,23 @@
       <a class="chip" href="https://github.com/pig-tongzhi/cloudmap" target="_blank" rel="noopener">cloudmap<small>票税日志监控服务</small></a>
       <a class="chip" href="https://github.com/pig-tongzhi/stock-trading-system" target="_blank" rel="noopener">stock-trading-system<small>Spring Boot 3 + React</small></a>
       <a class="chip" href="https://github.com/pig-tongzhi/blog" target="_blank" rel="noopener">blog<small>个人博客 · Next.js</small></a>
+    </div>
+
+    <div class="group-label spaced">自建系统 · 私有仓库</div>
+    <div class="grid">
+      <div class="demo">
+        <span class="tag">自建 · 本机 + 云机</span>
+        <h3>renjie问股 · A 股分析流水线</h3>
+        <p>三个服务协同编排：每日股票分析系统 + RSS/Atom 与 JSON 两路资讯转换，资讯注入 LLM 上下文；定时选股 → 研判链 → 日报 → 回测全链路，配套执行监控页、日报长图导出与云端快照回传。技术栈 Python / FastAPI / SQLite / Node 22。</p>
+        <div class="links"><span>仓库 renjie-wengu（私有）</span></div>
+      </div>
+
+      <div class="demo">
+        <span class="tag">自建 · 云上部署</span>
+        <h3>renjieDoc · 中转站与工程文档</h3>
+        <p>用自托管 Memos 搭的「中转站」：手机写 #指令，SSE 实时监听 + 定时拉取双通道、30 秒状态机派发给常驻 Agent、结果以评论回写手机，形成闭环；云机 systemd 与本机 launchd 编排。项目内沉淀 PRD、交接、验收与部署清单等工程文档（含《中转站流水线交接文档》）。</p>
+        <div class="links"><span>仓库 renjieDoc（私有）</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -305,7 +323,7 @@
 
 <footer>
   <div class="wrap">
-    <p>项目经历按 2026-11 最新版简历整理；在线系统、公开仓库与合并记录来自本机项目清单、云上服务清单与 PR 台账；贡献者名单取自 GitHub 官方 Contributors API。最后核对：2026-11-05。</p>
+    <p>项目经历按 2026-11 最新版简历整理；在线系统、公开仓库与合并记录来自本机项目清单、云上服务清单与 PR 台账；自建系统说明取自 renjie问股 与 renjieDoc 的 README、中转站流水线交接文档；贡献者名单取自 GitHub 官方 Contributors API。最后核对：2026-11-05。</p>
     <p>GitHub：<a href="https://github.com/pig-tongzhi" target="_blank" rel="noopener">https://github.com/pig-tongzhi</a>　·　联系方式见简历正文。</p>
     <button class="copy" id="copyBtn" type="button">复制本页链接，贴进简历</button>
   </div>
