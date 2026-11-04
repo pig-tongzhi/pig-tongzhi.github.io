@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zack · 项目索引</title>
-<meta name="description" content="Zack 的项目索引：已上线的系统、能直接点开的 Demo、公开源码与已合并的开源 PR。">
+<title>renjie · 项目索引</title>
+<meta name="description" content="renjie 的项目索引：已上线的系统、能直接点开的 Demo、公开源码与已合并的开源 PR。">
 <style>
   :root{
     --bg:#f7f6f3; --card:#fff; --ink:#1b1e20; --muted:#6c7278; --line:#e4e2dd;
@@ -74,6 +74,7 @@
 
   .skills{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px}
   .skill{font-size:12.5px; padding:5px 11px; border-radius:6px; background:#eeece7; color:#41474d}
+  .group-label{font-size:12px; color:var(--muted); margin:20px 0 2px; letter-spacing:.04em}
 
   footer{padding:38px 0 60px; color:var(--muted); font-size:13px}
   footer p{margin:0 0 8px}
@@ -105,7 +106,7 @@
 
 <div class="topbar">
   <div class="wrap">
-    <div class="brand">Zack<span>项目索引 / Project Index</span></div>
+    <div class="brand">renjie<span>项目索引 / Project Index</span></div>
     <div class="top-links">
       <a href="#online">在线 Demo</a>
       <a href="#work">项目经历</a>
@@ -180,41 +181,53 @@
 
 <section id="work">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-no">02</span><h2>工作项目 · 简历里那几段</h2></div>
-    <p class="sec-note">Java 后端 / AI 应用方向。以下为工作中的业务系统，代码在内网或私有仓库，这里只做职责与结果的说明。</p>
+    <div class="sec-head"><span class="sec-no">02</span><h2>项目经历 · 与最新简历一致</h2></div>
+    <p class="sec-note">项目名称、职责与数字按 2026-11 最新版简历整理。工作项目的代码在内网或私有仓库，这里只做说明；能公开的源码和线上系统在 01、04 两节。</p>
 
     <div class="work">
-      <div class="work-top"><h3>票税核心系统与智能化升级</h3><span class="role">Java 开发 · 2022.07 至今</span></div>
+      <div class="work-top"><h3>滴滴出行 · SOFI 墨西哥数字银行营销域</h3><span class="role">Java 开发工程师 · 2026.07 至今</span></div>
       <ul>
-        <li>负责票税授权与采集链路；网关侧设计动态明文解析，<b>适配 36 个地区税局报文</b>，新税局接入周期从 5 天缩短至 1.5 天。</li>
-        <li>优化路由匹配与限流决策，拦截异常峰值流量超 30%，核心接口 <b>TP99 从 800ms 降至 200ms 以内</b>。</li>
-        <li>推动枢纽采集渠道双通道容灾，<b>采集成功率从 95% 提升至 99.9%</b>。</li>
-        <li>基于 Spring AI + Milvus 构建政策问答 RAG 知识库，并接入 Function Calling 实现对话式业务操作。</li>
+        <li>营销域 <b>4 个服务</b>的需求设计、开发与日常迭代，覆盖「活动配置 → 资格决策 → 预算冻结 → 发奖执行 → 渠道回调 → 结算」全链路。</li>
+        <li>发奖框架拆成<b>匹配、触发、执行、回调、补偿</b>五段，奖型按类型路由到触发模板与执行器；新增奖型从「改代码」变成「加配置」，不动主流程即可上线新玩法。</li>
+        <li>预算与资金安全：冻结 / 扣减 / 解冻完整闭环、异常全程回滚，请求 / 任务 / 外部单号<b>三层幂等 + 状态机改序</b>，杜绝重复出款与预算超发。</li>
+        <li>性能优化：热点击户并发冲突把「先查后改」改成原子更新，<b>25 TPS 场景成功率 73.6% → 100%</b>；200 TPS 压测下达到 <b>101.6 TPS</b>（特性分支）。</li>
+        <li>统一发奖错误码口径与兜底，线上问题可按单号定位；参与链路追踪染色与 XXL-Job → Dcron 分片调度改造。</li>
       </ul>
     </div>
 
     <div class="work">
-      <div class="work-top"><h3>企业级智能知识库与 AI Agent 平台</h3><span class="role">Java / AI 应用 · 2023.10 至今</span></div>
+      <div class="work-top"><h3>蚂蚁金服金融 · 票税核心系统与智能化升级</h3><span class="role">Java 开发工程师 · 2022.07 - 2026.05</span></div>
       <ul>
-        <li>基于 LangChain4j 搭建统一 LLM 网关，支持多模型动态路由、Token 计费与并发限流。</li>
-        <li>实现完整 RAG 链路（文档解析 → 递归分块 → 向量化 → 检索），引入 Query 重写与 BM25 + 向量混合检索，<b>问答准确率 65% → 90% 以上</b>。</li>
-        <li>用 Function Calling 打通内部 Jira、GitLab 与告警系统；SSE + WebFlux 实现流式输出，优化首字响应时间。</li>
+        <li>负责票税授权、采集链路、网关路由与多地区税局适配，保障核心链路稳定运行。</li>
+        <li>在 <b>bktaxgw</b> 网关设计动态明文解析方案，<b>支持 36 个地区税局报文适配</b>，提升新税局接入效率与网关灵活性。</li>
+        <li>优化路由匹配与限流决策，降低授权流量高峰对税局系统的冲击。</li>
+        <li>在 <b>bkfintaxprod</b> 推动 36 个地区接入枢纽采集渠道，实现双渠道并行与容灾。</li>
       </ul>
     </div>
 
     <div class="work">
-      <div class="work-top"><h3>电商母婴室业务系统</h3><span class="role">Java 开发 · 2020.08 - 2022.06</span></div>
+      <div class="work-top"><h3>企业级智能知识库与 AI Agent 平台（内部提效项目）</h3><span class="role">Java / AI 应用开发 · 2023.10 - 2026.05</span></div>
       <ul>
-        <li>RocketMQ 异步化替代定时拉取，<b>系统吞吐提升 3 倍</b>，CPU 峰值下降 30%；Redisson 分布式锁解决高并发错码 / 重码。</li>
-        <li>JWT 重构无状态登录，减少 60% 冗余登录请求；完善 ISV 结算对账，每月处理千万级流水。</li>
+        <li>基于 <b>LangChain4j / Spring AI</b> 封装统一大模型调用层：模型参数配置、Prompt 模板管理、超时重试与异常兜底；<b>SSE / WebFlux</b> 流式输出，优化长文本首字响应。</li>
+        <li>RAG 核心链路：PDF / Word 解析 → 递归分块 → Embedding 向量化 → 向量检索 → 答案生成，用 <b>Query Rewriting + 混合检索</b> 降低大模型幻觉。</li>
+        <li>Agent 能力建设：梳理 Jira、GitLab、监控告警等内部系统的工具调用边界，设计「问题理解 → 工具选择 → 结果总结」的 Agent 处理流程。</li>
       </ul>
     </div>
 
     <div class="work">
-      <div class="work-top"><h3>电商家装营销系统</h3><span class="role">Java 开发 · 2021.03 - 2022.06</span></div>
+      <div class="work-top"><h3>唯品会品牌特卖营销与发券中台</h3><span class="role">Java 开发工程师 · 2020.05 - 2021.05</span></div>
       <ul>
-        <li>负责发券到核销的闭环链路，支撑大促日均百万级请求。</li>
-        <li>用「模板方法 + 责任链」重构多场景核销流程，<b>新营销玩法接入从 3 天缩短至 0.5 天</b>。</li>
+        <li>负责交易成功后的发券与核销流程开发，支撑优惠券、满减券、活动券等多种玩法，覆盖日常大促与品牌特卖场景。</li>
+        <li>用<b>「模板方法 + 责任链」</b>统一多场景券核销流程，抽象券类型、核销策略与责任节点，缩短常规活动开发周期。</li>
+        <li>结合日志排查、接口超时控制与异常补偿机制，提升营销链路可用性与问题定位效率。</li>
+      </ul>
+    </div>
+
+    <div class="work">
+      <div class="work-top"><h3>智飞生物医药数据分析平台（实习）</h3><span class="role">Java 开发实习生 · 2020.03 - 2020.04</span></div>
+      <ul>
+        <li>参与销售数据查询、区域维度统计、客户信息查询等后台接口开发，配合前端完成运营看板联调。</li>
+        <li>用定时任务维护订单、库存、客户等基础数据同步与状态更新；协助优化时间范围、区域筛选、客户编码查询等慢 SQL。</li>
       </ul>
     </div>
   </div>
@@ -254,21 +267,37 @@
 <section id="stack">
   <div class="wrap">
     <div class="sec-head"><span class="sec-no">05</span><h2>技术栈</h2></div>
-    <p class="sec-note">主要用在上面这些项目里。</p>
+    <p class="sec-note">前两组与最新简历一致，第三组是自己做的公开项目里用到的。</p>
+
+    <p class="group-label">后端 / 中间件</p>
     <div class="skills">
-      <span class="skill">Java</span><span class="skill">Spring Boot</span><span class="skill">Spring AI</span>
-      <span class="skill">LangChain4j</span><span class="skill">RAG</span><span class="skill">Milvus</span>
-      <span class="skill">Function Calling / Agent</span><span class="skill">MyBatis-Plus</span>
-      <span class="skill">Redis / Redisson</span><span class="skill">RocketMQ</span><span class="skill">Netty</span>
-      <span class="skill">MySQL</span><span class="skill">WebFlux / SSE</span><span class="skill">Python / FastAPI</span>
-      <span class="skill">Vue</span><span class="skill">React / Next.js</span><span class="skill">Nginx / Linux</span>
+      <span class="skill">Java</span><span class="skill">Spring</span><span class="skill">Spring Boot</span>
+      <span class="skill">MyBatis-Plus</span><span class="skill">JUC / AQS</span><span class="skill">JVM</span>
+      <span class="skill">MySQL</span><span class="skill">Redis</span><span class="skill">Redisson</span>
+      <span class="skill">RocketMQ</span><span class="skill">Netty</span><span class="skill">分布式锁</span>
+      <span class="skill">限流</span><span class="skill">慢 SQL 优化</span><span class="skill">XXL-Job / Dcron</span>
+    </div>
+
+    <p class="group-label">AI 应用</p>
+    <div class="skills">
+      <span class="skill">Spring AI</span><span class="skill">LangChain4j</span><span class="skill">LLM API</span>
+      <span class="skill">Prompt Engineering</span><span class="skill">RAG</span><span class="skill">Embedding</span>
+      <span class="skill">混合检索</span><span class="skill">Query Rewriting</span><span class="skill">Milvus</span>
+      <span class="skill">Function / Tool Calling</span><span class="skill">AI Agent</span>
+      <span class="skill">SSE / WebFlux</span><span class="skill">流式输出</span>
+    </div>
+
+    <p class="group-label">自己做的公开项目</p>
+    <div class="skills">
+      <span class="skill">Python / FastAPI</span><span class="skill">Vue</span><span class="skill">React / Next.js</span>
+      <span class="skill">Nginx / Linux</span><span class="skill">GitHub Actions</span>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p>本页内容来自本机的项目清单、云上服务清单、简历项目经历与开源 PR 台账，最后核对：2026-11-05。</p>
+    <p>项目经历按 2026-11 最新版简历整理；在线系统、公开仓库与开源 PR 来自本机项目清单、云上服务清单与 PR 台账。最后核对：2026-11-05。</p>
     <p>GitHub：<a href="https://github.com/pig-tongzhi" target="_blank" rel="noopener">https://github.com/pig-tongzhi</a>　·　联系方式见简历正文。</p>
     <button class="copy" id="copyBtn" type="button">复制本页链接，贴进简历</button>
   </div>
