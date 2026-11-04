@@ -66,6 +66,10 @@
   td{padding:12px 10px 12px 0; border-bottom:1px solid var(--line); vertical-align:top}
   td:last-child{text-align:right; white-space:nowrap}
   .merged{color:var(--accent); font-weight:600; font-size:12px}
+  .pr-id{font-weight:600; font-variant-numeric:tabular-nums}
+  .proof{margin:24px 0 0}
+  .proof img{width:100%; height:auto; display:block; border:1px solid var(--line); border-radius:10px; background:#fff}
+  .proof figcaption{font-size:12px; color:var(--muted); margin-top:9px; line-height:1.6}
 
   .chips{display:flex; flex-wrap:wrap; gap:10px}
   .chip{display:inline-block; border:1px solid var(--line); background:var(--card); border-radius:8px; padding:9px 14px; font-size:13px; color:var(--ink)}
@@ -120,11 +124,11 @@
   <div class="wrap">
     <div class="kicker">renjie · Project Index · 更新于 2026.11</div>
     <h1>我做过的项目，<br>都在这里，点开就能核对。</h1>
-    <p class="lede">简历里塞不下的东西放这页：<strong>能直接点开的线上系统</strong>、<strong>能翻的公开源码</strong>、<strong>能查到合并记录的开源 PR</strong>。没有效果图，也没有「参与过」——写出来的都是实际做过、并且可以验证的。</p>
+    <p class="lede">简历里塞不下的东西放这页：<strong>能直接点开的线上系统</strong>、<strong>能翻的公开源码</strong>、<strong>合并进 Apache 项目的开源提交</strong>。没有效果图，也没有「参与过」——写出来的都是实际做过的。</p>
     <div class="stats">
       <div class="stat"><b>4</b><span>个已上线、可访问的系统</span></div>
       <div class="stat"><b>4</b><span>个已合并的开源 PR</span></div>
-      <div class="stat"><b>17</b><span>个提交过的开源 PR</span></div>
+      <div class="stat"><b>6</b><span>个自己写的公开仓库</span></div>
     </div>
   </div>
 </header>
@@ -236,16 +240,20 @@
 <section id="oss">
   <div class="wrap">
     <div class="sec-head"><span class="sec-no">03</span><h2>开源贡献 · 已合并</h2></div>
-    <p class="sec-note">累计向 Apache / langchain4j / Alibaba 等仓库提交 17 个 PR，其中 4 个已合并，其余在 review 中。下面是合并记录，都能点开核对。</p>
+    <p class="sec-note">向 Apache 开源项目提交的改动中，有 4 笔已合并，均为 CI / workflow 依赖升级这类社区维护型贡献。下面是合并记录，贡献者身份见下方名单。</p>
     <table>
       <thead><tr><th>仓库 / PR</th><th>内容</th><th>合并日期</th><th>状态</th></tr></thead>
       <tbody>
-        <tr><td><a class="arrow" href="https://github.com/apache/dubbo/pull/16526" target="_blank" rel="noopener">apache/dubbo #16526</a></td><td>定时任务 workflow 中 actions/cache 升级至 v4（3 文件，+33 −33）</td><td>2026-10-20</td><td><span class="merged">MERGED</span></td></tr>
-        <tr><td><a class="arrow" href="https://github.com/apache/dubbo/pull/16532" target="_blank" rel="noopener">apache/dubbo #16532</a></td><td>剩余 actions/cache 升级至 v4，已合入 3.3 分支</td><td>2026-10-21</td><td><span class="merged">MERGED</span></td></tr>
-        <tr><td><a class="arrow" href="https://github.com/apache/seatunnel/pull/12913" target="_blank" rel="noopener">apache/seatunnel #12913</a></td><td>codeql workflow 中 actions/checkout v2 → v4</td><td>2026-10-21</td><td><span class="merged">MERGED</span></td></tr>
-        <tr><td><a class="arrow" href="https://github.com/apache/shenyu/pull/8077" target="_blank" rel="noopener">apache/shenyu #8077</a></td><td>e2e-k8s workflow 中 actions/checkout v2 → v4</td><td>2026-10-24</td><td><span class="merged">MERGED</span></td></tr>
+        <tr><td><span class="pr-id">apache/dubbo #16526</span></td><td>定时任务 workflow 中 actions/cache 升级至 v4（3 文件，+33 −33）</td><td>2026-10-20</td><td><span class="merged">MERGED</span></td></tr>
+        <tr><td><span class="pr-id">apache/dubbo #16532</span></td><td>剩余 actions/cache 升级至 v4，已合入 3.3 分支</td><td>2026-10-21</td><td><span class="merged">MERGED</span></td></tr>
+        <tr><td><span class="pr-id">apache/seatunnel #12913</span></td><td>codeql workflow 中 actions/checkout v2 → v4</td><td>2026-10-21</td><td><span class="merged">MERGED</span></td></tr>
+        <tr><td><span class="pr-id">apache/shenyu #8077</span></td><td>e2e-k8s workflow 中 actions/checkout v2 → v4</td><td>2026-10-24</td><td><span class="merged">MERGED</span></td></tr>
       </tbody>
     </table>
+    <figure class="proof">
+      <img src="apache-dubbo-contributors.png" alt="GitHub 官方 Contributors API 名单节选：apache/dubbo 共 401 位贡献者，第 203 位为 pig-tongzhi，2 次提交">
+      <figcaption>apache/dubbo 贡献者名单节选（第 199–206 位）。数据来自 GitHub 官方 Contributors API，2026-11-05 查询；第 203 位 <b>pig-tongzhi</b> 为本人 GitHub 账号，2 次提交。</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -297,7 +305,7 @@
 
 <footer>
   <div class="wrap">
-    <p>项目经历按 2026-11 最新版简历整理；在线系统、公开仓库与开源 PR 来自本机项目清单、云上服务清单与 PR 台账。最后核对：2026-11-05。</p>
+    <p>项目经历按 2026-11 最新版简历整理；在线系统、公开仓库与合并记录来自本机项目清单、云上服务清单与 PR 台账；贡献者名单取自 GitHub 官方 Contributors API。最后核对：2026-11-05。</p>
     <p>GitHub：<a href="https://github.com/pig-tongzhi" target="_blank" rel="noopener">https://github.com/pig-tongzhi</a>　·　联系方式见简历正文。</p>
     <button class="copy" id="copyBtn" type="button">复制本页链接，贴进简历</button>
   </div>
